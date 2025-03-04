@@ -3,7 +3,9 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-import { FileIcon, MenuIcon, SettingsIcon, UserIcon } from '@/icons';
+import BlueWaveLogo from '../../../public/assets/BluewaveLogo';
+
+import { FileIcon, MenuIcon, SettingsIcon, UserIcon } from '@/../public/assets/icons';
 
 import DropdownMenu from './DropdownMenu';
 import { useState } from 'react';
@@ -23,7 +25,6 @@ import {
 	AppBar,
 	IconButton,
 } from '@mui/material';
-import BlueWaveLogo from './BluewaveLogo';
 
 export default function Sidebar() {
 	const [isOpen, setIsOpen] = useState(false);

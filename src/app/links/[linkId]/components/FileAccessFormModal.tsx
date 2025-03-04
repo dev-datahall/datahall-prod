@@ -19,9 +19,9 @@ import LoadingButton from '@/components/LoadingButton';
 
 import { useFormSubmission, useValidatedFormData } from '@/hooks';
 
-import { requiredFieldRule, validEmailRule } from '@/shared/utils/validators';
+import { requiredFieldRule, validEmailRule } from '@/utils/shared/validators';
 
-import { EyeIcon, EyeOffIcon, FileDownloadIcon } from '@/icons';
+import { EyeIcon, EyeOffIcon, FileDownloadIcon } from '@/../public/assets/icons';
 
 const RowBox = styled(Box)({
 	display: 'flex',
@@ -225,7 +225,9 @@ const FileAccessModal = (props: FileAccessModalProps) => {
 								onBlur={handleBlur}
 								type={isPasswordVisible ? 'text' : 'password'}
 							/>
-							<Box mt={10}>
+							<Box
+								mt={10}
+								>
 								<IconButton
 									size='large'
 									onClick={() => setIsPasswordVisible(!isPasswordVisible)}>

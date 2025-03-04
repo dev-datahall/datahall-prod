@@ -1,7 +1,7 @@
 import Dropdown from '@/components/Dropdown';
 import Paginator from '@/components/Paginator';
 
-import { TrashIcon } from '@/icons';
+import { TrashIcon } from '@/../public/assets/icons';
 
 import {
 	Paper,
@@ -16,7 +16,7 @@ import {
 } from '@mui/material';
 
 import IconButton from '@mui/material/IconButton';
-import { User } from '@/shared/models/models';
+import { User } from '@/utils/shared/models';
 
 interface Props {
 	users: User[];

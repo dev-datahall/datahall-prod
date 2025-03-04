@@ -1,8 +1,8 @@
 import { TableCell, TableRow, TableSortLabel } from '@mui/material';
 
-import { DocumentType } from '@/shared/models/models';
+import { DocumentType } from '@/utils/shared/models';
 
-import { ChevronDownIcon, ChevronSelectorVerticalIcon } from '@/icons';
+import { ChevronDownIcon, ChevronSelectorVerticalIcon } from '@/../public/assets/icons';
 
 interface Props {
 	orderBy: keyof DocumentType | undefined;

@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 
 import { Box, Typography } from '@mui/material';
 
-import { CheckCircleIcon } from '@/icons';
+import { CheckCircleIcon } from '@/../public/assets/icons';
 
 import LoadingButton from '@/components/LoadingButton';
 import AuthFormWrapper from '../components/AuthFormWrapper';

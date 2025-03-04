@@ -1,4 +1,4 @@
-import { ValidationRule } from '@/shared/utils/validators';
+import { ValidationRule } from '@/utils/shared/validators';
 import { ChangeEvent, FocusEvent, useState } from 'react';
 
 /** Shape for the config you pass into useValidatedFormData */

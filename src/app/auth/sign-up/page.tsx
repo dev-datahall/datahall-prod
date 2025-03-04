@@ -8,6 +8,7 @@ import FormInput from '@/components/FormInput';
 import LoadingButton from '@/components/LoadingButton';
 import NavLink from '@/components/NavLink';
 import PasswordValidation from '@/components/PasswordValidation';
+import BluewaveLogo from '../../../../public/assets/BluewaveLogo';
 import AuthFormWrapper from '../components/AuthFormWrapper';
 
 import { useFormSubmission, useValidatedFormData } from '@/hooks';
@@ -15,8 +16,7 @@ import {
 	passwordValidationRule,
 	requiredFieldRule,
 	validEmailRule,
-} from '@/shared/utils/validators';
-import BluewaveLogo from '@/components/layout/BluewaveLogo';
+} from '@/utils/shared/validators';
 
 export default function SignUp() {
 	const router = useRouter();

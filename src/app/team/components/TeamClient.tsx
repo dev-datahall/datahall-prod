@@ -12,7 +12,7 @@ import UserTable from './UserTable';
 
 import { useModal } from '@/hooks';
 
-import { User } from '@/shared/models/models';
+import { User } from '@/utils/shared/models';
 
 export default function TeamClient() {
 	const inviteModal = useModal();

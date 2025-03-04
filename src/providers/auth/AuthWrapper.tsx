@@ -1,6 +1,5 @@
 import SignIn from '@/app/auth/sign-in/page';
-import Sidebar from '@/components/layout/Sidebar';
-
+import Sidebar from '@/app/layout/Sidebar';
 import { Box, CircularProgress } from '@mui/material';
 import { useSession } from 'next-auth/react';
 import { usePathname } from 'next/navigation';

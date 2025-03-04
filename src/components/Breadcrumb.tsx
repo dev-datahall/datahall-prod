@@ -5,7 +5,14 @@ import { usePathname } from 'next/navigation';
 import { useMemo } from 'react';
 import NavLink from './NavLink';
 
-import { ChevronRightIcon, FileIcon, HomeIcon, SettingsIcon, UserIcon, UsersIcon } from '@/icons';
+import {
+	ChevronRightIcon,
+	FileIcon,
+	HomeIcon,
+	SettingsIcon,
+	UserIcon,
+	UsersIcon,
+} from '@/../public/assets/icons';
 
 const Breadcrumb = () => {
 	const pathname = usePathname();
