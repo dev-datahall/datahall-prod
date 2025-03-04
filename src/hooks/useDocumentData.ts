@@ -37,6 +37,7 @@ export default function useDocumentData(
 			const res = await axios.get(url);
 			if (variant === 'linkTable') {
 				setData(res.data.links || []);
+				console.log('🚀 ~ fetchData ~ res.data.links:', res.data.links);
 			} else {
 				setData(res.data.visitors || []);
 			}

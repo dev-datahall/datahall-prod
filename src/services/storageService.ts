@@ -1,5 +1,5 @@
 // storageService.ts
-import { SupabaseProvider } from '@/app/api/_services/storage/supabase/supabaseStorageProvider';
+import { SupabaseProvider } from '@/providers/storage/supabase/supabaseProvider';
 
 /**
  * Metadata for a file upload.

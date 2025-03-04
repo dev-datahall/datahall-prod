@@ -1,15 +1,12 @@
 'use client';
-import { SessionProvider } from 'next-auth/react';
-import { useEffect, useState } from 'react';
 
-import { CssBaseline, ThemeProvider } from '@mui/material';
+import globalTheme from '@/utils/theme/globalTheme';
+import { CircularProgress, CssBaseline, ThemeProvider } from '@mui/material';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter';
-
-import LoadingSpinner from '@/components/LoadingSpinner';
-import AuthWrapper from '@/providers/auth/AuthWrapper';
+import { SessionProvider } from 'next-auth/react';
+import React, { useEffect, useState } from 'react';
 import { ToastProvider } from '@/providers/toast/ToastProvider';
-
-import globalTheme from '@/theme/globalTheme';
+import AuthWrapper from '@/providers/auth/AuthWrapper';
 
 export default function Providers({ children }: { children: React.ReactNode }) {
 	const [isHydrated, setIsHydrated] = useState(false);
@@ -20,7 +17,7 @@ export default function Providers({ children }: { children: React.ReactNode }) {
 
 	if (!isHydrated) {
 		// Show a loading spinner while the client-side is hydrating
-		return <LoadingSpinner />;
+		return <CircularProgress />;
 	}
 
 	return (

@@ -35,7 +35,7 @@ const DocumentsTable = () => {
 		const fetchDocuments = async () => {
 			setLoading(true);
 			try {
-				const response = await axios.get('/api/documents');
+				const response = await axios.get('/api/documents/list');
 
 				setDocuments(response.data.documents || []);
 			} catch (err) {

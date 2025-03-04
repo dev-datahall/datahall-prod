@@ -31,7 +31,7 @@ export default function AccountCreated() {
 		const intervalId = setInterval(async () => {
 			try {
 				const queryParam = token ? `token=${token}` : `userId=${userId}`;
-				const response = await fetch(`/api/auth/verify?${queryParam}`);
+				const response = await fetch(`/api/auth/verify-email?${queryParam}`);
 				const data = await response.json();
 
 				if (response.ok) {
@@ -60,8 +60,7 @@ export default function AccountCreated() {
 	}, [token, userId]);
 
 	const handleContinue = () => {
-		if (isVerified) router.push('/documents');
-		else router.push('/auth/sign-in');
+		router.push('/auth/sign-in');
 	};
 
 	return (

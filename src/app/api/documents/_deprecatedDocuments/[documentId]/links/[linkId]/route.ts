@@ -1,10 +1,10 @@
-import { authService } from '@/app/api/_services/authService';
-import prisma from '@/lib/prisma';
+import { authenticate } from '@lib/middleware/authenticate';
+import prisma from '@lib/prisma';
 import { NextRequest, NextResponse } from 'next/server';
 
 export async function DELETE(req: NextRequest, { params }: { params: { linkId: string } }) {
 	try {
-		const userId = await authService.authenticate(req);
+		const userId = await authenticate(req);
 		const { linkId } = params;
 
 		// Verify doc ownership + link existence
