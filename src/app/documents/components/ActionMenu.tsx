@@ -1,9 +1,9 @@
-import { Menu, MenuItem, Typography } from '@mui/material';
 import { useState } from 'react';
+
+import { Menu, MenuItem, Typography } from '@mui/material';
 
 import ModalWrapper from '@/components/ModalWrapper';
 import CreateLink from './CreateLink';
-import ShareableLinkDialog from './ShareableLinkDialog';
 
 import { useModal } from '@/hooks';
 
@@ -16,32 +16,20 @@ interface Props {
 	onAnalytics?: () => void;
 }
 
-export default function ActionMenu({
-	anchorEl,
-	open,
-	onClose,
-	documentId,
-	onDelete,
-	onAnalytics,
-}: Props) {
+const ActionMenu = ({ anchorEl, open, onClose, documentId, onDelete, onAnalytics }: Props) => {
 	const deleteModal = useModal();
 	const updateModal = useModal();
 
-	// Store the newly created link to show in ShareableLinkDialog
-	const [newLinkUrl, setNewLinkUrl] = useState('');
-	const [createLinkOpen, setCreateLinkOpen] = useState(false);
+	const [openLink, setOpen] = useState(false);
 
-	function handleOpenCreateLink() {
-		setCreateLinkOpen(true);
+	const handleClickOpen = () => {
+		setOpen(true);
+	};
+
+	const handleClose = () => {
+		setOpen(false);
 		onClose();
-	}
-
-	function handleCloseCreateLink(action: string, createdLink?: string) {
-		setCreateLinkOpen(false);
-		if (createdLink) {
-			setNewLinkUrl(createdLink);
-		}
-	}
+	};
 
 	return (
 		<>
@@ -50,10 +38,10 @@ export default function ActionMenu({
 				open={open}
 				onClose={onClose}
 				disableScrollLock={true}>
-				<MenuItem onClick={handleOpenCreateLink}>Create Link</MenuItem>
+				<MenuItem onClick={handleClickOpen}>Add new link</MenuItem>
 				{/* <MenuItem onClick={onClose}>Duplicate document</MenuItem> */}
 				{/* <MenuItem onClick={updateModal.openModal}>Update document</MenuItem> */}
-				{onAnalytics && <MenuItem onClick={onAnalytics}>View analytics</MenuItem>}
+				<MenuItem onClick={onAnalytics}>View analytics</MenuItem>
 				<MenuItem onClick={deleteModal.openModal}>
 					<Typography
 						variant='body1'
@@ -63,20 +51,12 @@ export default function ActionMenu({
 				</MenuItem>
 			</Menu>
 
-			{/* CREATE LINK DIALOG */}
 			<CreateLink
-				open={createLinkOpen}
+				open={openLink}
+				onClose={handleClose}
 				documentId={documentId}
-				onClose={handleCloseCreateLink}
 			/>
 
-			{/* SHAREABLE LINK DIALOG */}
-			<ShareableLinkDialog
-				linkUrl={newLinkUrl}
-				onClose={() => setNewLinkUrl('')} // hide the dialog
-			/>
-
-			{/* DELETE CONFIRMATION MODAL */}
 			<ModalWrapper
 				variant='delete'
 				title='Really delete this file?'
@@ -102,4 +82,6 @@ export default function ActionMenu({
 			/>
 		</>
 	);
-}
+};
+
+export default ActionMenu;

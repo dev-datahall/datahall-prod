@@ -4,7 +4,6 @@ import prisma from '@/lib/prisma';
 import bcryptjs from 'bcryptjs';
 import { randomUUID } from 'crypto';
 import { SupabaseProvider } from '@/app/api/_services/storage/supabase/supabaseStorageProvider';
-import { Prisma } from '@prisma/client';
 
 export class LinkService {
 	/**
@@ -61,26 +60,20 @@ export class LinkService {
 		if (password) {
 			hashedPassword = await bcryptjs.hash(password, 10);
 		}
-		try {
-			return await prisma.link.create({
-				data: {
-					userId,
-					linkId: uniqueId,
-					linkUrl,
-					documentId: doc.document_id,
-					isPublic: !!isPublic,
-					password: hashedPassword,
-					friendlyName: friendlyName || linkUrl,
-					expirationTime: expirationTime ? new Date(expirationTime) : null,
-					requiredUserDetailsOption: requiredUserDetailsOption ?? null,
-				},
-			});
-		} catch (err: any) {
-			if (err instanceof Prisma.PrismaClientKnownRequestError && err.code === 'P2002') {
-				throw new Error('FRIENDLY_NAME_CONFLICT');
-			}
-			throw err;
-		}
+
+		return prisma.link.create({
+			data: {
+				userId,
+				linkId: uniqueId,
+				linkUrl,
+				documentId: doc.document_id,
+				isPublic: !!isPublic,
+				password: hashedPassword,
+				friendlyName: friendlyName || linkUrl,
+				expirationTime: expirationTime ? new Date(expirationTime) : null,
+				requiredUserDetailsOption: requiredUserDetailsOption ?? null,
+			},
+		});
 	}
 
 	/**
