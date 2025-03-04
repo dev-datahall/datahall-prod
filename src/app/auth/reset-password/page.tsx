@@ -10,10 +10,10 @@ import NavLink from '@/components/NavLink';
 import PasswordValidation from '@/components/PasswordValidation';
 import AuthFormWrapper from '../components/AuthFormWrapper';
 
-import { LockIcon } from '@/icons';
+import { LockIcon } from '@/../public/assets/icons';
 
 import { useFormSubmission, useValidatedFormData } from '@/hooks';
-import { requiredFieldRule, passwordValidationRule } from '@/shared/utils/validators';
+import { passwordValidationRule, requiredFieldRule } from '@/utils/shared/validators';
 
 export default function ResetPassword() {
 	const router = useRouter();

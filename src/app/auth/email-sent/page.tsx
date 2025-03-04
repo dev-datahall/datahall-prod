@@ -5,7 +5,7 @@ import { Box, Container, Link, Typography } from '@mui/material';
 import NextLink from 'next/link';
 import { FormEvent, useState } from 'react';
 
-import { MailIcon } from '@/icons';
+import { MailIcon } from '@/../public/assets/icons';
 
 export default function EmailSent() {
 	const [email, setEmail] = useState('your_email@bluewave.ca');

@@ -1,6 +1,6 @@
 'use client';
 
-import { PencilIcon, SaveIcon } from '@/icons';
+import { PencilIcon, SaveIcon } from '@/../public/assets/icons';
 import { Box, IconButton, TextField, Typography } from '@mui/material';
 import { useEffect, useRef, useState } from 'react';
 

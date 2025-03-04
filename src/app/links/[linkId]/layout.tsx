@@ -1,6 +1,7 @@
 import React from 'react';
 import { Typography, Box, Link } from '@mui/material';
-import BlueWaveLogo from '@/components/layout/BluewaveLogo';
+
+import BlueWaveLogo from '../../../../public/assets/BluewaveLogo';
 
 interface RootLayoutProps {
 	children: React.ReactNode;

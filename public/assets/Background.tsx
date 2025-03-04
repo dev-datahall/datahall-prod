@@ -20,7 +20,7 @@ interface BackgroundProps extends SVGProps<SVGSVGElement> {
  * @returns {JSX.Element} A scalable vector graphic (SVG) element representing the background image.
  */
 
-const BackgroundIcon: FC<BackgroundProps> = ({
+const Background: FC<BackgroundProps> = ({
 	width = 768,
 	height = 768,
 	backgroundPosition = 0,
@@ -138,4 +138,4 @@ const BackgroundIcon: FC<BackgroundProps> = ({
 	</Box>
 );
 
-export default BackgroundIcon;
+export default Background;

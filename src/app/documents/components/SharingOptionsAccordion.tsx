@@ -2,11 +2,11 @@ import React from 'react';
 
 import { Box, IconButton, MenuItem, RadioGroup, Select, Typography } from '@mui/material';
 
-import { EyeIcon, EyeOffIcon } from '@/icons';
+import { EyeIcon, EyeOffIcon } from '@/../public/assets/icons';
 
 import CustomCheckbox from '@/components/CustomCheckbox';
 import FormInput from '@/components/FormInput';
-import { LinkFormValues } from '@/shared/models/models';
+import { LinkFormValues } from '@/utils/shared/models';
 
 interface SharingOptionsAccordionProps {
 	formValues: any;

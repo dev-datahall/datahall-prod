@@ -3,13 +3,13 @@ import { useState } from 'react';
 
 import { Avatar, Box, Chip, IconButton, TableCell, TableRow, Typography } from '@mui/material';
 
-import { BarChartIcon, CheckIcon, LinkIcon, SettingsIcon } from '@/icons';
+import { BarChartIcon, CheckIcon, LinkIcon, SettingsIcon } from '@/../public/assets/icons';
 
 import NavLink from '@/components/NavLink';
 import ActionMenu from './ActionMenu';
 
-import { DocumentType, FileTypeConfig } from '@/shared/models/models';
-import { formatDateTime } from '@/shared/utils/utils';
+import { DocumentType, FileTypeConfig } from '@/utils/shared/models';
+import { formatDateTime } from '@/utils/shared/utils';
 
 interface Props {
 	document: DocumentType;

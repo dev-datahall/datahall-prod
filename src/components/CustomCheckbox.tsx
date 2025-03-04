@@ -1,5 +1,6 @@
 import { Checkbox, CheckboxProps, FormControlLabel } from '@mui/material';
-import { SquareIcon, CheckSquareIcon } from '@/icons';
+
+import { CheckSquareIcon, SquareIcon } from '../../public/assets/icons';
 
 import { ChangeEvent } from 'react';
 

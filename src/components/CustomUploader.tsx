@@ -5,7 +5,7 @@ import { useSession } from 'next-auth/react';
 import { Box, Button, TextField } from '@mui/material';
 
 import { useToast } from '@/hooks';
-import { formatFileSize } from '@/shared/utils/utils';
+import { formatFileSize } from '@/utils/shared/utils';
 
 interface DocumentUploaderProps {
 	allowedFormats?: string;
