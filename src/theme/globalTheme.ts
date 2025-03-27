@@ -19,7 +19,6 @@ const background = {
 	fill: '#FFFFFF',
 	error: '#DB504A',
 	secondary: '#F9FAFB',
-	secondaryButton: '#e2e8f0',
 };
 
 const disabled = {
@@ -340,7 +339,7 @@ const globalTheme = createTheme({
 					},
 					'@media (min-width:1200px)': {
 						padding: '0.4rem 1.5rem',
-						fontSize: '1rem',
+						fontSize: '0.87rem',
 					},
 				},
 				sizeMedium: {
@@ -368,7 +367,7 @@ const globalTheme = createTheme({
 					'@media (min-width:1200px)': {
 						padding: '0.3rem 0.8rem',
 						minWidth: '7rem',
-						fontSize: '0.8rem',
+						fontSize: '0.75rem',
 					},
 				},
 				containedPrimary: {
