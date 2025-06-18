@@ -4,13 +4,16 @@ import { useEffect, useState } from 'react';
 
 import { CssBaseline, ThemeProvider } from '@mui/material';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter';
+import { LocalizationProvider } from '@mui/x-date-pickers';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 
-import { LoadingSpinner } from '@/components';
-import AuthWrapper from '@/providers/auth/AuthWrapper';
-import { ToastProvider } from '@/providers/toast/ToastProvider';
+import AuthProvider from '@/providers/auth/AuthProvider';
+import { ModalProvider } from '@/providers/modal/ModalProvider';
 import QueryProvider from '@/providers/query/QueryProvider';
+import { ToastProvider } from '@/providers/toast/ToastProvider';
 
 import globalTheme from '@/theme/globalTheme';
+import { LoadingSpinner } from '@/components';
 
 export default function Providers({ children }: { children: React.ReactNode }) {
 	const [isHydrated, setIsHydrated] = useState(false);
@@ -30,9 +33,13 @@ export default function Providers({ children }: { children: React.ReactNode }) {
 				<ThemeProvider theme={globalTheme}>
 					<CssBaseline />
 					<ToastProvider>
-						<QueryProvider>
-							<AuthWrapper>{children}</AuthWrapper>
-						</QueryProvider>
+						<LocalizationProvider dateAdapter={AdapterDayjs}>
+							<QueryProvider>
+								<ModalProvider>
+									<AuthProvider>{children}</AuthProvider>
+								</ModalProvider>
+							</QueryProvider>
+						</LocalizationProvider>
 					</ToastProvider>
 				</ThemeProvider>
 			</AppRouterCacheProvider>
